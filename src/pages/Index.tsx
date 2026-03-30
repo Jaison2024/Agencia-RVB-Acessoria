@@ -22,6 +22,7 @@ const Index = () => {
         <GEOSection />
         <MethodSection />
         <CasesSection />
+        <BlogSection />
         <FAQSection />
         <CTASection />
       </main>
