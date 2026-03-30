@@ -7,7 +7,7 @@ import { Calendar, Clock, ArrowRight } from "lucide-react";
 const articles = [
   {
     slug: "como-aparecer-topo-google-maps",
-    title: "Como Aparecer no Topo do Google Maps em 2025",
+    title: "Como Aparecer no Topo do Google Maps em 2026",
     excerpt:
       "Descubra as estratégias comprovadas para posicionar sua empresa no Top 1 do Google Maps e atrair clientes locais todos os dias. Aprenda sobre otimização de perfil, avaliações e palavras-chave locais.",
     category: "Google Maps",
