@@ -56,7 +56,7 @@ const articles = [
     excerpt:
       "As avaliações são o fator #1 para ranquear no Google Maps. Aprenda técnicas éticas para aumentar suas reviews e melhorar sua reputação online.",
     category: "Google Maps",
-    date: "18 Fev 2025",
+    date: "18 Fev 2026",
     readTime: "5 min",
   },
 ];
