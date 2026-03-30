@@ -8,6 +8,7 @@ import GoogleMapsPage from "./pages/GoogleMaps.tsx";
 import CriacaoSitesPage from "./pages/CriacaoSites.tsx";
 import GestaoRedesPage from "./pages/GestaoRedes.tsx";
 import BlogPage from "./pages/Blog.tsx";
+import BlogArticlePage from "./pages/BlogArticle.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
