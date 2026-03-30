@@ -7,7 +7,7 @@ const posts = [
     title: "Como Aparecer no Topo do Google Maps em 2026",
     excerpt: "Descubra as estratégias comprovadas para posicionar sua empresa no Top 1 do Google Maps e atrair clientes locais todos os dias.",
     category: "Google Maps",
-    date: "28 Mar 2025",
+    date: "28 Mar 2026",
     readTime: "5 min",
   },
   {
