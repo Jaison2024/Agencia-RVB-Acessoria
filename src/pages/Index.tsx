@@ -6,6 +6,7 @@ import GEOSection from "@/components/GEOSection";
 import MethodSection from "@/components/MethodSection";
 import CasesSection from "@/components/CasesSection";
 import FAQSection from "@/components/FAQSection";
+import BlogSection from "@/components/BlogSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -21,6 +22,7 @@ const Index = () => {
         <GEOSection />
         <MethodSection />
         <CasesSection />
+        <BlogSection />
         <FAQSection />
         <CTASection />
       </main>
