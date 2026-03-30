@@ -86,8 +86,9 @@ const Blog = () => {
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {articles.map((article) => (
-                <article
+                <a
                   key={article.slug}
+                  href={`/blog/${article.slug}`}
                   className="group flex flex-col overflow-hidden rounded-xl border border-border/50 bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(0,255,136,0.08)]"
                 >
                   <div className="flex flex-1 flex-col p-6">
@@ -109,7 +110,7 @@ const Blog = () => {
                       </span>
                     </div>
                   </div>
-                </article>
+                </a>
               ))}
             </div>
           </div>

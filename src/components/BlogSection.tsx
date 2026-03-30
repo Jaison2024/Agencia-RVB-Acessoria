@@ -23,7 +23,7 @@ const posts = [
     title: "GEO: Como a Inteligência Artificial Está Mudando o Marketing Local",
     excerpt: "Entenda o que é Generative Engine Optimization e por que sua empresa precisa estar preparada para as buscas por IA.",
     category: "GEO",
-    date: "12 Mar 2025",
+    date: "12 Mar 2026",
     readTime: "6 min",
   },
 ];
