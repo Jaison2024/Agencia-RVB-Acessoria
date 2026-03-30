@@ -3,11 +3,12 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { label: "Soluções", href: "#solucoes" },
-  { label: "Método", href: "#metodo" },
-  { label: "Cases", href: "#cases" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contato", href: "#contato" },
+  { label: "Soluções", href: "/#solucoes" },
+  { label: "Google Maps", href: "/google-maps" },
+  { label: "Criação de Sites", href: "/criacao-de-sites" },
+  { label: "Redes Sociais", href: "/gestao-de-redes-sociais" },
+  { label: "Cases", href: "/#cases" },
+  { label: "Contato", href: "/#contato" },
 ];
 
 const Header = () => {
