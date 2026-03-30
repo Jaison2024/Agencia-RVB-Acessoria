@@ -8,6 +8,7 @@ import GoogleMapsPage from "./pages/GoogleMaps.tsx";
 import CriacaoSitesPage from "./pages/CriacaoSites.tsx";
 import GestaoRedesPage from "./pages/GestaoRedes.tsx";
 import BlogPage from "./pages/Blog.tsx";
+import BlogArticlePage from "./pages/BlogArticle.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/criacao-de-sites" element={<CriacaoSitesPage />} />
           <Route path="/gestao-de-redes-sociais" element={<GestaoRedesPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogArticlePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
