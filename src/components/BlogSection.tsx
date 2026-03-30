@@ -15,7 +15,7 @@ const posts = [
     title: "SEO Local: O Guia Definitivo para Negócios no Oeste de SC",
     excerpt: "Aprenda como otimizar sua presença online para dominar as buscas locais em Concórdia, Chapecó e região.",
     category: "SEO Local",
-    date: "20 Mar 2025",
+    date: "20 Mar 2026",
     readTime: "7 min",
   },
   {
