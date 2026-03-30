@@ -47,7 +47,7 @@ const articles = [
     excerpt:
       "Ainda depende só de redes sociais? Entenda por que um site próprio é essencial para credibilidade, SEO e conversão de clientes locais.",
     category: "Criação de Sites",
-    date: "25 Fev 2025",
+    date: "25 Fev 2026",
     readTime: "4 min",
   },
   {
