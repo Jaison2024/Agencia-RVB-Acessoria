@@ -34,7 +34,7 @@ const articles = [
   },
   {
     slug: "redes-sociais-negocios-locais",
-    title: "Redes Sociais para Negócios Locais: Guia Prático 2025",
+    title: "Redes Sociais para Negócios Locais: Guia Prático 2026",
     excerpt:
       "Como usar Instagram, Facebook e WhatsApp Business para atrair clientes da sua região. Estratégias que funcionam para empresas no interior de SC.",
     category: "Redes Sociais",
