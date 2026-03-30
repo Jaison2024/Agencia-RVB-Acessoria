@@ -11,7 +11,7 @@ const articles = [
     excerpt:
       "Descubra as estratégias comprovadas para posicionar sua empresa no Top 1 do Google Maps e atrair clientes locais todos os dias. Aprenda sobre otimização de perfil, avaliações e palavras-chave locais.",
     category: "Google Maps",
-    date: "28 Mar 2025",
+    date: "28 Mar 2026",
     readTime: "5 min",
   },
   {
