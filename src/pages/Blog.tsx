@@ -38,7 +38,7 @@ const articles = [
     excerpt:
       "Como usar Instagram, Facebook e WhatsApp Business para atrair clientes da sua região. Estratégias que funcionam para empresas no interior de SC.",
     category: "Redes Sociais",
-    date: "5 Mar 2025",
+    date: "5 Mar 2026",
     readTime: "8 min",
   },
   {
