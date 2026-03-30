@@ -19,6 +19,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/google-maps" element={<GoogleMapsPage />} />
+          <Route path="/criacao-de-sites" element={<CriacaoSitesPage />} />
+          <Route path="/gestao-de-redes-sociais" element={<GestaoRedesPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
