@@ -43,7 +43,7 @@ const articles = [
   },
   {
     slug: "site-profissional-pequenas-empresas",
-    title: "Por Que Sua Empresa Precisa de um Site Profissional em 2025",
+    title: "Por Que Sua Empresa Precisa de um Site Profissional em 2026",
     excerpt:
       "Ainda depende só de redes sociais? Entenda por que um site próprio é essencial para credibilidade, SEO e conversão de clientes locais.",
     category: "Criação de Sites",
