@@ -4,10 +4,10 @@ import { ArrowRight, Calendar, Clock } from "lucide-react";
 const posts = [
   {
     slug: "como-aparecer-topo-google-maps",
-    title: "Como Aparecer no Topo do Google Maps em 2025",
+    title: "Como Aparecer no Topo do Google Maps em 2026",
     excerpt: "Descubra as estratégias comprovadas para posicionar sua empresa no Top 1 do Google Maps e atrair clientes locais todos os dias.",
     category: "Google Maps",
-    date: "28 Mar 2025",
+    date: "28 Mar 2026",
     readTime: "5 min",
   },
   {
@@ -15,7 +15,7 @@ const posts = [
     title: "SEO Local: O Guia Definitivo para Negócios no Oeste de SC",
     excerpt: "Aprenda como otimizar sua presença online para dominar as buscas locais em Concórdia, Chapecó e região.",
     category: "SEO Local",
-    date: "20 Mar 2025",
+    date: "20 Mar 2026",
     readTime: "7 min",
   },
   {
@@ -23,7 +23,7 @@ const posts = [
     title: "GEO: Como a Inteligência Artificial Está Mudando o Marketing Local",
     excerpt: "Entenda o que é Generative Engine Optimization e por que sua empresa precisa estar preparada para as buscas por IA.",
     category: "GEO",
-    date: "12 Mar 2025",
+    date: "12 Mar 2026",
     readTime: "6 min",
   },
 ];
