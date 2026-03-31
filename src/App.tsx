@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import GoogleMapsPage from "./pages/GoogleMaps.tsx";
 import CriacaoSitesPage from "./pages/CriacaoSites.tsx";
 import GestaoRedesPage from "./pages/GestaoRedes.tsx";
+import HospedagemPage from "./pages/Hospedagem.tsx";
 import BlogPage from "./pages/Blog.tsx";
 import BlogArticlePage from "./pages/BlogArticle.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/google-maps" element={<GoogleMapsPage />} />
           <Route path="/criacao-de-sites" element={<CriacaoSitesPage />} />
           <Route path="/gestao-de-redes-sociais" element={<GestaoRedesPage />} />
+          <Route path="/hospedagem-cloud" element={<HospedagemPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogArticlePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
