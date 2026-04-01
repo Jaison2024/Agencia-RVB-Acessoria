@@ -151,8 +151,12 @@ const BlogArticle = () => {
             <div className="prose prose-invert mx-auto max-w-3xl prose-headings:text-foreground prose-headings:font-extrabold prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-p:text-muted-foreground prose-p:leading-relaxed prose-strong:text-foreground prose-li:text-muted-foreground prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-table:border-border/50 prose-th:text-foreground prose-td:text-muted-foreground">
               {article.content.map((section, i) => {
                 const headingId = article.headings[i]?.id;
+                const visual = getArticleVisual(slug || "", i);
                 return (
-                  <div key={i} id={headingId} className="scroll-mt-24" dangerouslySetInnerHTML={{ __html: markdownToHtml(section) }} />
+                  <div key={i}>
+                    <div id={headingId} className="scroll-mt-24" dangerouslySetInnerHTML={{ __html: markdownToHtml(section) }} />
+                    {visual && <div className="not-prose">{visual}</div>}
+                  </div>
                 );
               })}
             </div>
