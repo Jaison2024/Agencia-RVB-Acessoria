@@ -98,6 +98,8 @@ Na **RVB Assessoria**, ajudamos empresas do Oeste de SC a conquistar o Top 1 do 
     ],
   },
   {
+    icon: "Search",
+    iconBg: "from-blue-500/20 to-cyan-500/20",
     slug: "seo-local-negocios-oeste-sc",
     title: "SEO Local: O Guia Definitivo para Negócios no Oeste de SC",
     excerpt:
