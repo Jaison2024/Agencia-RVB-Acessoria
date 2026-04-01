@@ -7,6 +7,7 @@ import { getArticleBySlug, formatDate, blogArticles } from "@/data/blogArticles"
 import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect } from "react";
 import BlogArticleIcon from "@/components/BlogArticleIcon";
+import { getArticleVisual } from "@/components/blog-visuals/ArticleVisuals";
 
 const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();
