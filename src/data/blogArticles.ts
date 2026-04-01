@@ -14,6 +14,8 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    icon: "MapPin",
+    iconBg: "from-emerald-500/20 to-teal-500/20",
     slug: "como-aparecer-topo-google-maps",
     title: "Como Aparecer no Topo do Google Maps em 2026",
     excerpt:
