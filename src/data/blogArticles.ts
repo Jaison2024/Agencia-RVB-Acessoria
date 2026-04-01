@@ -8,6 +8,8 @@ export interface BlogArticle {
   metaDescription: string;
   content: string[];
   headings: { id: string; text: string }[];
+  icon: string;
+  iconBg: string;
 }
 
 export const blogArticles: BlogArticle[] = [
