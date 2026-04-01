@@ -462,6 +462,8 @@ Solicite seu **diagnóstico gratuito** e descubra como um site profissional pode
     ],
   },
   {
+    icon: "Star",
+    iconBg: "from-yellow-500/20 to-amber-500/20",
     slug: "avaliacoes-google-importancia",
     title: "Avaliações no Google: Como Conseguir Mais Reviews e Subir no Ranking",
     excerpt:
