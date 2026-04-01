@@ -275,6 +275,8 @@ Solicite seu **diagnóstico gratuito** e descubra como posicionar seu negócio p
     ],
   },
   {
+    icon: "Share2",
+    iconBg: "from-pink-500/20 to-rose-500/20",
     slug: "redes-sociais-negocios-locais",
     title: "Redes Sociais para Negócios Locais: Guia Prático 2026",
     excerpt:
