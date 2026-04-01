@@ -375,6 +375,8 @@ Entre em contato para um **diagnóstico gratuito** das suas redes sociais.`,
     ],
   },
   {
+    icon: "Globe",
+    iconBg: "from-amber-500/20 to-orange-500/20",
     slug: "site-profissional-pequenas-empresas",
     title: "Por Que Sua Empresa Precisa de um Site Profissional em 2026",
     excerpt:
