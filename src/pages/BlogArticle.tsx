@@ -6,6 +6,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { getArticleBySlug, formatDate, blogArticles } from "@/data/blogArticles";
 import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect } from "react";
+import BlogArticleIcon from "@/components/BlogArticleIcon";
 
 const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();
