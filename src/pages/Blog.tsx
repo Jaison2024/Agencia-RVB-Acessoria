@@ -5,6 +5,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { blogArticles, formatDate } from "@/data/blogArticles";
 import { Calendar, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import BlogArticleIcon from "@/components/BlogArticleIcon";
 
 const Blog = () => {
   const ref = useScrollReveal();
@@ -37,9 +38,12 @@ const Blog = () => {
                   className="group flex flex-col overflow-hidden rounded-xl border border-border/50 bg-card transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(0,255,136,0.08)]"
                 >
                   <div className="flex flex-1 flex-col p-6">
-                    <span className="mb-3 w-fit rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                      {article.category}
-                    </span>
+                    <div className="mb-4 flex items-center gap-3">
+                      <BlogArticleIcon iconName={article.icon} gradientClass={article.iconBg} />
+                      <span className="w-fit rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                        {article.category}
+                      </span>
+                    </div>
                     <h2 className="mb-2 text-lg font-bold leading-tight text-foreground transition-colors group-hover:text-primary">
                       {article.title}
                     </h2>
