@@ -102,9 +102,12 @@ const BlogArticle = () => {
           {/* Header */}
           <div className="container pb-8">
             <div className="mx-auto max-w-3xl">
-              <span className="mb-4 inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary">
-                {article.category}
-              </span>
+              <div className="mb-6 flex items-center gap-4">
+                <BlogArticleIcon iconName={article.icon} gradientClass={article.iconBg} size="lg" />
+                <span className="rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary">
+                  {article.category}
+                </span>
+              </div>
               <h1 className="mb-6 text-3xl font-extrabold leading-tight md:text-4xl lg:text-5xl">
                 {article.title}
               </h1>
