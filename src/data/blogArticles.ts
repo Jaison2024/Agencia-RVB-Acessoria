@@ -196,6 +196,8 @@ Quer resultados assim para o seu negócio? Solicite seu **diagnóstico gratuito*
     ],
   },
   {
+    icon: "Brain",
+    iconBg: "from-purple-500/20 to-violet-500/20",
     slug: "geo-inteligencia-artificial-negocios",
     title: "GEO: Como a Inteligência Artificial Está Mudando o Marketing Local",
     excerpt:
