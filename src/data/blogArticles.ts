@@ -8,10 +8,14 @@ export interface BlogArticle {
   metaDescription: string;
   content: string[];
   headings: { id: string; text: string }[];
+  icon: string;
+  iconBg: string;
 }
 
 export const blogArticles: BlogArticle[] = [
   {
+    icon: "MapPin",
+    iconBg: "from-emerald-500/20 to-teal-500/20",
     slug: "como-aparecer-topo-google-maps",
     title: "Como Aparecer no Topo do Google Maps em 2026",
     excerpt:
@@ -94,6 +98,8 @@ Na **RVB Assessoria**, ajudamos empresas do Oeste de SC a conquistar o Top 1 do 
     ],
   },
   {
+    icon: "Search",
+    iconBg: "from-blue-500/20 to-cyan-500/20",
     slug: "seo-local-negocios-oeste-sc",
     title: "SEO Local: O Guia Definitivo para Negócios no Oeste de SC",
     excerpt:
@@ -190,6 +196,8 @@ Quer resultados assim para o seu negócio? Solicite seu **diagnóstico gratuito*
     ],
   },
   {
+    icon: "Brain",
+    iconBg: "from-purple-500/20 to-violet-500/20",
     slug: "geo-inteligencia-artificial-negocios",
     title: "GEO: Como a Inteligência Artificial Está Mudando o Marketing Local",
     excerpt:
@@ -267,6 +275,8 @@ Solicite seu **diagnóstico gratuito** e descubra como posicionar seu negócio p
     ],
   },
   {
+    icon: "Share2",
+    iconBg: "from-pink-500/20 to-rose-500/20",
     slug: "redes-sociais-negocios-locais",
     title: "Redes Sociais para Negócios Locais: Guia Prático 2026",
     excerpt:
@@ -365,6 +375,8 @@ Entre em contato para um **diagnóstico gratuito** das suas redes sociais.`,
     ],
   },
   {
+    icon: "Globe",
+    iconBg: "from-amber-500/20 to-orange-500/20",
     slug: "site-profissional-pequenas-empresas",
     title: "Por Que Sua Empresa Precisa de um Site Profissional em 2026",
     excerpt:
@@ -450,6 +462,8 @@ Solicite seu **diagnóstico gratuito** e descubra como um site profissional pode
     ],
   },
   {
+    icon: "Star",
+    iconBg: "from-yellow-500/20 to-amber-500/20",
     slug: "avaliacoes-google-importancia",
     title: "Avaliações no Google: Como Conseguir Mais Reviews e Subir no Ranking",
     excerpt:
