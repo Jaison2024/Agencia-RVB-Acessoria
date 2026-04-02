@@ -237,17 +237,7 @@ As IAs generativas não inventam informações do nada. Elas coletam dados de di
 
       `## SEO vs GEO: Qual a Diferença?
 
-| Aspecto | SEO Tradicional | GEO |
-|---|---|---|
-| **Objetivo** | Ranquear em links azuis | Ser citado por IAs |
-| **Formato** | Lista de resultados | Resposta conversacional |
-| **Otimização** | Keywords e backlinks | Dados estruturados e autoridade |
-| **Medição** | Posição e cliques | Menções e recomendações |
-| **Conteúdo** | Otimizado para crawlers | Otimizado para modelos de linguagem |
-
-**Importante:** GEO não substitui o SEO — ele complementa. Empresas que dominam ambos terão vantagem competitiva significativa nos próximos anos.
-
-Na RVB Assessoria, somos uma das poucas agências do Oeste de SC que já trabalham com GEO, preparando negócios locais para esta nova realidade.`,
+Entender a diferença entre SEO e GEO é essencial para montar uma estratégia completa de visibilidade digital. Confira a comparação abaixo:`,
 
       `## Como Preparar Seu Negócio para o GEO
 
