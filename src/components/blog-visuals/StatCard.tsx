@@ -1,4 +1,5 @@
 import { type LucideIcon } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
 
 interface StatCardProps {
   icon: LucideIcon;
@@ -20,11 +21,13 @@ interface StatGridProps {
 }
 
 export const StatGrid = ({ stats }: StatGridProps) => (
-  <div className={`my-8 grid gap-4 ${stats.length === 2 ? "grid-cols-2" : stats.length === 4 ? "grid-cols-2 md:grid-cols-4" : "grid-cols-1 sm:grid-cols-3"}`}>
-    {stats.map((s, i) => (
-      <StatCard key={i} {...s} />
-    ))}
-  </div>
+  <ScrollReveal>
+    <div className={`my-8 grid gap-4 ${stats.length === 2 ? "grid-cols-2" : stats.length === 4 ? "grid-cols-2 md:grid-cols-4" : "grid-cols-1 sm:grid-cols-3"}`}>
+      {stats.map((s, i) => (
+        <StatCard key={i} {...s} />
+      ))}
+    </div>
+  </ScrollReveal>
 );
 
 export default StatCard;
