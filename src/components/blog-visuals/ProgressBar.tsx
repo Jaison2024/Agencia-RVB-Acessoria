@@ -1,3 +1,5 @@
+import ScrollReveal from "./ScrollReveal";
+
 interface ProgressBarProps {
   label: string;
   value: number;
@@ -26,12 +28,14 @@ interface MiniDashboardProps {
 }
 
 export const MiniDashboard = ({ title, bars }: MiniDashboardProps) => (
-  <div className="my-8 rounded-xl border border-border/50 bg-card p-6">
-    <h4 className="mb-4 text-sm font-bold uppercase tracking-widest text-primary">{title}</h4>
-    <div className="space-y-4">
-      {bars.map((bar, i) => (
-        <ProgressBar key={i} {...bar} />
-      ))}
+  <ScrollReveal>
+    <div className="my-8 rounded-xl border border-border/50 bg-card p-6">
+      <h4 className="mb-4 text-sm font-bold uppercase tracking-widest text-primary">{title}</h4>
+      <div className="space-y-4">
+        {bars.map((bar, i) => (
+          <ProgressBar key={i} {...bar} />
+        ))}
+      </div>
     </div>
-  </div>
+  </ScrollReveal>
 );
