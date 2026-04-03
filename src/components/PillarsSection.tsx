@@ -44,9 +44,9 @@ const PillarsSection = () => {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="group relative rounded-2xl border border-border/50 bg-card p-8 transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(152_100%_50%/0.08)]"
+              className="group relative rounded-2xl border border-border/50 bg-card p-8 transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(152_100%_50%/0.08)] hover:-translate-y-1"
             >
-              <div className="mb-5 inline-flex rounded-xl bg-primary/10 p-3 text-primary transition-colors group-hover:bg-primary/20">
+              <div className="mb-5 inline-flex rounded-xl bg-primary/10 p-3 text-primary transition-all duration-300 group-hover:bg-primary/20 group-hover:-translate-y-1 group-hover:shadow-[0_0_20px_hsl(152_100%_50%/0.15)]">
                 <pillar.icon size={28} />
               </div>
               <h3 className="mb-1 text-xl font-bold">{pillar.title}</h3>

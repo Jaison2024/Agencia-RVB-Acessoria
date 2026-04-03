@@ -1,7 +1,12 @@
 import { ArrowRight, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCountUp } from "@/hooks/useCountUp";
 
 const HeroSection = () => {
+  const stat1 = useCountUp({ end: 46, suffix: "%" });
+  const stat2 = useCountUp({ end: 76, suffix: "%" });
+  const stat3 = useCountUp({ end: 300, suffix: "+", duration: 2500 });
+
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden pt-20">
       {/* Background grid effect */}
@@ -46,21 +51,19 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Trust bar */}
-          <div className="mt-16 border-t border-border/50 pt-8">
-            <p className="mb-4 text-xs font-medium uppercase tracking-widest text-muted-foreground">
-              Especialistas em
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm font-semibold text-muted-foreground md:gap-10">
-              <span>Google Maps</span>
-              <span className="hidden h-4 w-px bg-border sm:block" />
-              <span>SEO Técnico</span>
-              <span className="hidden h-4 w-px bg-border sm:block" />
-              <span>WordPress</span>
-              <span className="hidden h-4 w-px bg-border sm:block" />
-              <span>Meta Ads</span>
-              <span className="hidden h-4 w-px bg-border sm:block" />
-              <span>GEO / IA</span>
+          {/* Animated stats */}
+          <div className="mt-16 grid grid-cols-3 gap-6 border-t border-border/50 pt-8">
+            <div className="text-center" ref={stat1.ref as React.RefObject<HTMLDivElement>}>
+              <p className="text-3xl font-extrabold text-primary md:text-4xl">{stat1.display}</p>
+              <p className="mt-1 text-xs text-muted-foreground md:text-sm">buscas locais no Google</p>
+            </div>
+            <div className="text-center" ref={stat2.ref as React.RefObject<HTMLDivElement>}>
+              <p className="text-3xl font-extrabold text-primary md:text-4xl">{stat2.display}</p>
+              <p className="mt-1 text-xs text-muted-foreground md:text-sm">visitam em 24h após busca</p>
+            </div>
+            <div className="text-center" ref={stat3.ref as React.RefObject<HTMLDivElement>}>
+              <p className="text-3xl font-extrabold text-primary md:text-4xl">{stat3.display}</p>
+              <p className="mt-1 text-xs text-muted-foreground md:text-sm">empresas já atendidas</p>
             </div>
           </div>
         </div>

@@ -2,6 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ReadingProgressBar from "@/components/ReadingProgressBar";
+import ShareButtons from "@/components/ShareButtons";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { getArticleBySlug, formatDate, blogArticles } from "@/data/blogArticles";
 import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
@@ -65,14 +67,29 @@ const BlogArticle = () => {
     },
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://rvbassessoria.com.br/" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://rvbassessoria.com.br/blog" },
+      { "@type": "ListItem", position: 3, name: article.title, item: `https://rvbassessoria.com.br/blog/${article.slug}` },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <ReadingProgressBar />
       <Header />
 
       {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       {/* Meta tags via document.title */}
@@ -103,11 +120,14 @@ const BlogArticle = () => {
           {/* Header */}
           <div className="container pb-8">
             <div className="mx-auto max-w-3xl">
-              <div className="mb-6 flex items-center gap-4">
-                <BlogArticleIcon iconName={article.icon} gradientClass={article.iconBg} size="lg" />
-                <span className="rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary">
-                  {article.category}
-                </span>
+              <div className="mb-6 flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <BlogArticleIcon iconName={article.icon} gradientClass={article.iconBg} size="lg" />
+                  <span className="rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary">
+                    {article.category}
+                  </span>
+                </div>
+                <ShareButtons title={article.title} url={`/blog/${article.slug}`} />
               </div>
               <h1 className="mb-6 text-3xl font-extrabold leading-tight md:text-4xl lg:text-5xl">
                 {article.title}
@@ -162,6 +182,14 @@ const BlogArticle = () => {
             </div>
           </div>
 
+          {/* Share bottom */}
+          <div className="container pb-8">
+            <div className="mx-auto flex max-w-3xl items-center justify-between rounded-xl border border-border/50 bg-card p-6">
+              <p className="text-sm text-muted-foreground">Gostou do artigo? Compartilhe!</p>
+              <ShareButtons title={article.title} url={`/blog/${article.slug}`} />
+            </div>
+          </div>
+
           {/* CTA */}
           <div className="container pb-16">
             <div className="mx-auto max-w-3xl rounded-xl border border-primary/30 bg-primary/5 p-8 text-center">
@@ -170,7 +198,7 @@ const BlogArticle = () => {
                 Solicite um diagnóstico gratuito da sua presença digital e descubra como dominar seu mercado local.
               </p>
               <a
-                href="https://wa.me/5549999999999?text=Olá!%20Vim%20do%20blog%20e%20gostaria%20de%20um%20diagnóstico%20gratuito."
+                href="https://wa.me/5500000000000?text=Olá!%20Vim%20do%20blog%20e%20gostaria%20de%20um%20diagnóstico%20gratuito."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3 font-bold text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(0,255,136,0.3)]"

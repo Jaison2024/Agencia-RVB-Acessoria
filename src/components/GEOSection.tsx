@@ -46,11 +46,11 @@ const GEOSection = () => {
               <span className="font-semibold">{row.feature}</span>
               <span className="flex items-center justify-center gap-2 text-center text-muted-foreground">
                 <X size={14} className="shrink-0 text-destructive" />
-                <span className="hidden sm:inline">{row.common}</span>
+                <span className="text-xs sm:text-sm">{row.common}</span>
               </span>
               <span className="flex items-center justify-center gap-2 text-center font-medium text-primary">
                 <Check size={14} className="shrink-0" />
-                <span className="hidden sm:inline">{row.rvb}</span>
+                <span className="text-xs sm:text-sm">{row.rvb}</span>
               </span>
             </div>
           ))}
