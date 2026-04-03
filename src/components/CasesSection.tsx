@@ -48,7 +48,7 @@ const CasesSection = () => {
           {cases.map((c) => (
             <div
               key={c.title}
-              className="group flex flex-col rounded-2xl border border-border/50 bg-background p-8 transition-all duration-300 hover:border-primary/40"
+              className="group flex flex-col rounded-2xl border border-border/50 bg-background p-8 transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 hover:shadow-[0_0_30px_hsl(152_100%_50%/0.06)]"
             >
               <div className="mb-4 inline-flex w-fit rounded-xl bg-primary/10 p-3 text-primary">
                 <c.icon size={24} />
