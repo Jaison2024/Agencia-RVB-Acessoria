@@ -5,9 +5,10 @@ interface UseCountUpOptions {
   duration?: number;
   prefix?: string;
   suffix?: string;
+  decimals?: number;
 }
 
-export const useCountUp = ({ end, duration = 2000, prefix = "", suffix = "" }: UseCountUpOptions) => {
+export const useCountUp = ({ end, duration = 2000, prefix = "", suffix = "", decimals = 0 }: UseCountUpOptions) => {
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
   const ref = useRef<HTMLElement>(null);
@@ -37,9 +38,9 @@ export const useCountUp = ({ end, duration = 2000, prefix = "", suffix = "" }: U
     const animate = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // ease-out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.round(eased * end));
+      const raw = eased * end;
+      setCount(decimals > 0 ? parseFloat(raw.toFixed(decimals)) : Math.round(raw));
 
       if (progress < 1) {
         requestAnimationFrame(animate);
@@ -47,9 +48,9 @@ export const useCountUp = ({ end, duration = 2000, prefix = "", suffix = "" }: U
     };
 
     requestAnimationFrame(animate);
-  }, [hasStarted, end, duration]);
+  }, [hasStarted, end, duration, decimals]);
 
-  const display = `${prefix}${count}${suffix}`;
+  const display = `${prefix}${decimals > 0 ? count.toFixed(decimals) : count}${suffix}`;
 
   return { ref, display, count };
 };
