@@ -1,5 +1,6 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { MapPin, Globe, Instagram } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const pillars = [
   {
@@ -27,6 +28,32 @@ const pillars = [
 
 const PillarsSection = () => {
   const ref = useScrollReveal();
+  const cardsRef = useRef<HTMLDivElement>(null);
+  const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
+
+  useEffect(() => {
+    const container = cardsRef.current;
+    if (!container) return;
+
+    const cards = container.children;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Array.from(cards).indexOf(entry.target as Element);
+            setTimeout(() => {
+              setVisibleCards((prev) => new Set(prev).add(index));
+            }, index * 150);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    Array.from(cards).forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="solucoes" className="border-t border-border/50 py-24 md:py-32">
@@ -40,11 +67,13 @@ const PillarsSection = () => {
           </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {pillars.map((pillar) => (
+        <div ref={cardsRef} className="grid gap-6 md:grid-cols-3">
+          {pillars.map((pillar, index) => (
             <div
               key={pillar.title}
-              className="group relative rounded-2xl border border-border/50 bg-card p-8 transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(152_100%_50%/0.08)] hover:-translate-y-1"
+              className={`group relative rounded-2xl border border-border/50 bg-card p-8 transition-all duration-500 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(152_100%_50%/0.08)] hover:-translate-y-1 ${
+                visibleCards.has(index) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
             >
               <div className="mb-5 inline-flex rounded-xl bg-primary/10 p-3 text-primary transition-all duration-300 group-hover:bg-primary/20 group-hover:-translate-y-1 group-hover:shadow-[0_0_20px_hsl(152_100%_50%/0.15)]">
                 <pillar.icon size={28} />
