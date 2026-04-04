@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useCountUp } from "@/hooks/useCountUp";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -84,6 +85,9 @@ const faqs = [
 const GoogleMapsPage = () => {
   const heroRef = useScrollReveal();
   const statsRef = useScrollReveal();
+  const stat1 = useCountUp({ end: 46, suffix: "%" });
+  const stat2 = useCountUp({ end: 76, suffix: "%" });
+  const stat3 = useCountUp({ end: 28, suffix: "%" });
   const benefitsRef = useScrollReveal();
   const stepsRef = useScrollReveal();
   const faqRef = useScrollReveal();
@@ -176,9 +180,13 @@ const GoogleMapsPage = () => {
         <section className="border-t border-border/50 bg-card/30 py-14 md:py-20">
           <div className="section-fade-in container" ref={statsRef}>
             <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-3">
-              {stats.map((s) => (
-                <div key={s.label} className="text-center">
-                  <p className="text-4xl font-extrabold text-primary md:text-5xl">{s.value}</p>
+              {[
+                { stat: stat1, label: "das buscas no Google são locais" },
+                { stat: stat2, label: "visitam um negócio em 24h após busca local" },
+                { stat: stat3, label: "das buscas locais resultam em compra" },
+              ].map((s, i) => (
+                <div key={s.label} className="text-center" ref={i === 0 ? stat1.ref as React.RefObject<HTMLDivElement> : i === 1 ? stat2.ref as React.RefObject<HTMLDivElement> : stat3.ref as React.RefObject<HTMLDivElement>}>
+                  <p className="text-4xl font-extrabold text-primary md:text-5xl">{s.stat.display}</p>
                   <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
                 </div>
               ))}

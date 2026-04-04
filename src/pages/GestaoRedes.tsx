@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useCountUp } from "@/hooks/useCountUp";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -85,6 +86,9 @@ const faqs = [
 
 const GestaoRedesPage = () => {
   const heroRef = useScrollReveal();
+  const statEngajamento = useCountUp({ end: 3.5, suffix: "x", decimals: 1 });
+  const statPesquisam = useCountUp({ end: 80, suffix: "%" });
+  const statPosts = useCountUp({ end: 20, prefix: "12-" });
   const problemRef = useScrollReveal();
   const servicesRef = useScrollReveal();
   const processRef = useScrollReveal();
@@ -179,13 +183,13 @@ const GestaoRedesPage = () => {
           <div className="container">
             <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-3">
               {[
-                { icon: Heart, value: "3.5x", label: "Mais engajamento com conteúdo estratégico" },
-                { icon: Eye, value: "80%", label: "Dos consumidores pesquisam redes antes de comprar" },
-                { icon: Megaphone, value: "12-20", label: "Posts profissionais por mês" },
-              ].map((s) => (
-                <div key={s.label} className="flex flex-col items-center text-center">
+                { icon: Heart, stat: statEngajamento, label: "Mais engajamento com conteúdo estratégico" },
+                { icon: Eye, stat: statPesquisam, label: "Dos consumidores pesquisam redes antes de comprar" },
+                { icon: Megaphone, stat: statPosts, label: "Posts profissionais por mês" },
+              ].map((s, i) => (
+                <div key={s.label} className="flex flex-col items-center text-center" ref={i === 0 ? statEngajamento.ref as React.RefObject<HTMLDivElement> : i === 1 ? statPesquisam.ref as React.RefObject<HTMLDivElement> : statPosts.ref as React.RefObject<HTMLDivElement>}>
                   <s.icon className="mb-2 text-primary" size={28} />
-                  <p className="text-3xl font-extrabold text-primary md:text-4xl">{s.value}</p>
+                  <p className="text-3xl font-extrabold text-primary md:text-4xl">{s.stat.display}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{s.label}</p>
                 </div>
               ))}

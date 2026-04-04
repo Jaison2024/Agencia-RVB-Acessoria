@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useCountUp } from "@/hooks/useCountUp";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -101,6 +102,9 @@ const faqs = [
 const HospedagemPage = () => {
   const heroRef = useScrollReveal();
   const statsRef = useScrollReveal();
+  const statAbandonam = useCountUp({ end: 53, suffix: "%" });
+  const statUptime = useCountUp({ end: 99.9, suffix: "%", decimals: 1 });
+  const statRanquear = useCountUp({ end: 3, suffix: "x" });
   const featuresRef = useScrollReveal();
   const plansRef = useScrollReveal();
   const faqRef = useScrollReveal();
@@ -205,9 +209,13 @@ const HospedagemPage = () => {
         <section className="border-t border-border/50 py-14 md:py-20">
           <div className="section-fade-in container" ref={statsRef}>
             <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-3">
-              {stats.map((s) => (
-                <div key={s.label} className="text-center">
-                  <p className="text-4xl font-extrabold text-primary md:text-5xl">{s.value}</p>
+              {[
+                { stat: statAbandonam, label: "dos visitantes abandonam sites que demoram mais de 3s" },
+                { stat: statUptime, label: "de uptime garantido nos nossos servidores" },
+                { stat: statRanquear, label: "mais chances de ranquear com site rápido" },
+              ].map((s, i) => (
+                <div key={s.label} className="text-center" ref={i === 0 ? statAbandonam.ref as React.RefObject<HTMLDivElement> : i === 1 ? statUptime.ref as React.RefObject<HTMLDivElement> : statRanquear.ref as React.RefObject<HTMLDivElement>}>
+                  <p className="text-4xl font-extrabold text-primary md:text-5xl">{s.stat.display}</p>
                   <p className="mt-2 text-sm text-muted-foreground">{s.label}</p>
                 </div>
               ))}
