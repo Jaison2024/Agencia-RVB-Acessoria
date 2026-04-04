@@ -85,6 +85,9 @@ const faqs = [
 const GoogleMapsPage = () => {
   const heroRef = useScrollReveal();
   const statsRef = useScrollReveal();
+  const stat1 = useCountUp({ end: 46, suffix: "%" });
+  const stat2 = useCountUp({ end: 76, suffix: "%" });
+  const stat3 = useCountUp({ end: 28, suffix: "%" });
   const benefitsRef = useScrollReveal();
   const stepsRef = useScrollReveal();
   const faqRef = useScrollReveal();
