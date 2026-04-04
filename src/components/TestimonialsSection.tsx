@@ -28,6 +28,32 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   const ref = useScrollReveal();
+  const cardsRef = useRef<HTMLDivElement>(null);
+  const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
+
+  useEffect(() => {
+    const container = cardsRef.current;
+    if (!container) return;
+
+    const cards = container.children;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Array.from(cards).indexOf(entry.target as Element);
+            setTimeout(() => {
+              setVisibleCards((prev) => new Set(prev).add(index));
+            }, index * 150);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    Array.from(cards).forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="border-t border-border/50 py-24 md:py-32">
