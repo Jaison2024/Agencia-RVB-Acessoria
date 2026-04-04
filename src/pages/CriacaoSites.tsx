@@ -87,6 +87,9 @@ const faqs = [
 
 const CriacaoSitesPage = () => {
   const heroRef = useScrollReveal();
+  const statVelocidade = useCountUp({ end: 2, prefix: "<", suffix: "s" });
+  const statResponsivo = useCountUp({ end: 100, suffix: "%" });
+  const statConversoes = useCountUp({ end: 300, prefix: "+", suffix: "%" });
   const featuresRef = useScrollReveal();
   const processRef = useScrollReveal();
   const compRef = useScrollReveal();
