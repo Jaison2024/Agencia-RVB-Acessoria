@@ -102,6 +102,9 @@ const faqs = [
 const HospedagemPage = () => {
   const heroRef = useScrollReveal();
   const statsRef = useScrollReveal();
+  const statAbandonam = useCountUp({ end: 53, suffix: "%" });
+  const statUptime = useCountUp({ end: 99.9, suffix: "%", decimals: 1 });
+  const statRanquear = useCountUp({ end: 3, suffix: "x" });
   const featuresRef = useScrollReveal();
   const plansRef = useScrollReveal();
   const faqRef = useScrollReveal();
