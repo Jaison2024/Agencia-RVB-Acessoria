@@ -67,11 +67,13 @@ const TestimonialsSection = () => {
           </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {testimonials.map((t) => (
+        <div ref={cardsRef} className="grid gap-6 md:grid-cols-3">
+          {testimonials.map((t, index) => (
             <div
               key={t.name}
-              className="group relative flex flex-col rounded-2xl border border-border/50 bg-card p-8 transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(152_100%_50%/0.06)]"
+              className={`group relative flex flex-col rounded-2xl border border-border/50 bg-card p-8 transition-all duration-500 hover:border-primary/40 hover:shadow-[0_0_30px_hsl(152_100%_50%/0.06)] ${
+                visibleCards.has(index) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
             >
               <Quote size={24} className="mb-4 text-primary/30" />
 
