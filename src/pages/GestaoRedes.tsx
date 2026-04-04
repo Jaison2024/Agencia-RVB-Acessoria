@@ -86,6 +86,9 @@ const faqs = [
 
 const GestaoRedesPage = () => {
   const heroRef = useScrollReveal();
+  const statEngajamento = useCountUp({ end: 3.5, suffix: "x", decimals: 1 });
+  const statPesquisam = useCountUp({ end: 80, suffix: "%" });
+  const statPosts = useCountUp({ end: 20, prefix: "12-" });
   const problemRef = useScrollReveal();
   const servicesRef = useScrollReveal();
   const processRef = useScrollReveal();
