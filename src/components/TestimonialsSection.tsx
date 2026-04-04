@@ -1,5 +1,6 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Star, Quote } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const testimonials = [
   {
