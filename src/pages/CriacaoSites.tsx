@@ -184,13 +184,13 @@ const CriacaoSitesPage = () => {
           <div className="container">
             <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-3">
               {[
-                { icon: Clock, value: "<2s", label: "Tempo de carregamento" },
-                { icon: Eye, value: "100%", label: "Responsivo em todas as telas" },
-                { icon: MousePointerClick, value: "+300%", label: "Mais conversões vs. sites comuns" },
-              ].map((s) => (
-                <div key={s.label} className="flex flex-col items-center text-center">
+                { icon: Clock, stat: statVelocidade, label: "Tempo de carregamento" },
+                { icon: Eye, stat: statResponsivo, label: "Responsivo em todas as telas" },
+                { icon: MousePointerClick, stat: statConversoes, label: "Mais conversões vs. sites comuns" },
+              ].map((s, i) => (
+                <div key={s.label} className="flex flex-col items-center text-center" ref={i === 0 ? statVelocidade.ref as React.RefObject<HTMLDivElement> : i === 1 ? statResponsivo.ref as React.RefObject<HTMLDivElement> : statConversoes.ref as React.RefObject<HTMLDivElement>}>
                   <s.icon className="mb-2 text-primary" size={28} />
-                  <p className="text-3xl font-extrabold text-primary md:text-4xl">{s.value}</p>
+                  <p className="text-3xl font-extrabold text-primary md:text-4xl">{s.stat.display}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{s.label}</p>
                 </div>
               ))}
